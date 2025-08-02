@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f9f9f9;
+        }
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            max-width: 700px;
+            margin: auto;
+        }
+        h2 {
+            color: #1a73e8;
+        }
+        .field {
+            margin-bottom: 15px;
+        }
+        .label {
+            font-weight: bold;
+        }
+        .download {
+            display: inline-block;
+            padding: 8px 12px;
+            background: #28a745;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .back {
+            margin-top: 20px;
+            display: inline-block;
+            text-decoration: none;
+            color: #1a73e8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Case Details</h2>
+        <div class="field"><span class="label">Parties:</span> {{ data.parties }}</div>
+        <div class="field"><span class="label">Filing Date:</span> {{ data.filing_date }}</div>
+        <div class="field"><span class="label">Next Hearing:</span> {{ data.next_hearing }}</div>
+        <div class="field"><span class="label">Latest Order:</span>
+            <a class="download" href="{{ data.latest_order }}" target="_blank">Download PDF</a>
+        </div>
+        <a class="back" href="/">🔙 Check another case</a>
+    </div>
+</body>
+</html>
+
